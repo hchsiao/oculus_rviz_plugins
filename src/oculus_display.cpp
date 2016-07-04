@@ -34,7 +34,7 @@
 #include <QDesktopWidget>
 #include <QApplication>
 
-#include <OVR.h>
+// #include <OVR.h>
 
 #include <boost/bind.hpp>
 
@@ -189,13 +189,13 @@ void OculusDisplay::onFullScreenChanged()
   {
     int x_res = 1280;
     int y_res = 800;
-    if ( oculus_->getHMDDevice() )
-    {
-      OVR::HMDInfo info;
-      oculus_->getHMDDevice()->GetDeviceInfo( &info );
-      x_res = info.HResolution;
-      y_res = info.VResolution;
-    }
+    // if ( oculus_->getHMDDevice() )
+    // {
+    //   OVR::HMDInfo info;
+    //   oculus_->getHMDDevice()->GetDeviceInfo( &info );
+    //   x_res = info.HResolution;
+    //   y_res = info.VResolution;
+    // }
     int primary_screen = QApplication::desktop()->primaryScreen();
     QRect screen_res = QApplication::desktop()->screenGeometry( primary_screen );
     render_widget_->setGeometry( screen_res.x(), screen_res.y(), x_res, y_res );
